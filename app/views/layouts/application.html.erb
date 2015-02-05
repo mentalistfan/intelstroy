@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= yield(:title) %> | Интелстрой</title>
+  <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+    	<div class="wrapper group">
+        	<a href="#" id="show_menu"></a>
+        	<div class="menublock">
+        	<%= link_to "", root_path, id: "logo"%>
+            	<nav>
+                	<ul class="group">
+                    	<li><%= link_to "О компании", about_path %></li>
+                        <li><%= link_to "Новости", news_path %></li>
+                        <li><%= link_to "Проекты", projects_path %></li>
+                        <li><a href="#">Услуги</a>
+                        	<ul>
+                            	<li><a href="#">Подменю 1</a></li>
+                                <li><a href="#">Подменю 2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="icons">
+                	<a href="#"><%= image_tag(asset_host("soc1.png"), class: "img-resp") %></a>
+                    <a href="#"><%= image_tag(asset_host("soc2.png"), class: "img-resp") %></a>
+                    <a href="#"><%= image_tag(asset_host("soc3.png"), class: "img-resp") %></a>
+                </div>
+         </div>       
+                	<a href="#" class="change_lang transition">en</a>
+                    <p class="tel"><span>+7 926</span> 800 88 88</p>
+                    	<ul class="unstyle group social">
+                        	<li><a href="#"><%= image_tag(asset_host("soc1.png"), class: "img-resp") %></a></li>
+                            <li><a href="#"><%= image_tag(asset_host("soc2.png"), class: "img-resp") %></a></li>
+                            <li><a href="#"><%= image_tag(asset_host("soc3.png"), class: "img-resp") %></a></li>
+                        </ul>
+        </div>
+    </header>
+
+<%= yield %>
+
+	<footer>
+    	<div class="wrapper group">
+        	<p class="copy">&copy; 2015 «ИнтелСтрой»</p>
+            	<a href="#" id="design">Разработка сайта - Wi-Fast</a>
+        </div>
+    </footer>
+</body>
+</html>

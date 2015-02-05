@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @company.title %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @company.slug %>
+</p>
+
+<p>
+  <strong>Menupunkt:</strong>
+  <%= @company.menupunkt %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @company.description %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @company.keywords %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @company.image %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @company.body %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>

@@ -1,0 +1,21 @@
+<%= title @page_title %>
+
+<a href="#" id="sitelogo"></a>
+    <a href="#" id="mobilelogo" style="display:none;"></a>
+    <section id="news" class="wrapper group center">
+    	<h1>Новости</h1>
+        	<div class="inside scrollpane">
+	<% for news in @news_posts %>		
+            	<article class="group">
+                	<div class="thumb">
+					<%= link_to image_tag(news.image, class: "img-resp"), "/news/#{news.id}-#{news.slug}" %></div>
+                    <div class="content">
+                    	<time><%= news.created_at.strftime("%Y/%M/%d") %></time>
+                        	<p class="title"><%= link_to news.title, "/news/#{news.id}-#{news.slug}" %></p>
+                            	<%= truncate(news.body.html_safe, length:250) %>
+                    </div>
+                </article>
+	<% end %>			
+                
+            </div>
+    </section>

@@ -1,0 +1,29 @@
+<%= title @one.title %>
+
+
+<a href="#" id="sitelogo"></a>
+    <a href="#" id="mobilelogo" style="display:none;"></a>
+    <section id="projects" class="wrapper group center">
+    	<h1><%= @one.title %></h1>
+        	<nav>
+            	<ul class="group">
+            <% for sub in @subcategories %>    
+                <li><a href="<%= sub.id %>" <%= 'class="active"' if sub.id == @one.id %> > <%= sub.title %></a></li>
+            <% end %>  
+                </ul>
+            </nav>
+            <div class="inside scrollpane">
+            	<div class="one">
+                	<div class="thumbnail"><%= image_tag @one.image, class: "img-resp" %></div>
+                    	<div class="text">
+                        <%= @one.body.html_safe %>
+                        <form>
+                        	<input type="text" name="name" placeholder="Имя">
+                            <input type="tel" name="tel" placeholder="Телефон" class="error">
+                            <textarea placeholder="Сообщение" name="text" class="error"></textarea>
+                            <button type="submit" class="gradient">Отправить</button>
+                        </form>
+                        </div>
+                </div>
+            </div>
+    </section>

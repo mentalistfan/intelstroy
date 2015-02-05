@@ -1,0 +1,31 @@
+<%= title @page_title %>
+<%= @subs %>
+<a href="#" id="sitelogo"></a>
+    <a href="#" id="mobilelogo" style="display:none;"></a>
+    <section id="projects" class="wrapper group center">
+    	<h1><%= @page_title %></h1>
+        	<nav>
+            	<ul class="group">
+            <% for sub in @subcategories %>    
+                <li><a href="<%= sub.id %>"><%= sub.title %></a></li>
+            <% end %>    	
+                </ul>
+            </nav>
+            <div class="inside scrollpane">
+            	<ul class="group unstyle" id="project_list">
+                <% for posts in @projects_posts %>	
+                	<li>
+                    	<div class="thumb"><%= image_tag posts.image, class: "img-resp transition" %></div>
+                        	<div class="link transition">
+                            	<div class="content">
+                                	<p class="title"><%= posts.title %></p>
+                                    <p class="address"><%= posts.address %></p>
+                                </div>
+                            </div>
+                            	<%= link_to "", "/projects/project/#{posts.id}-#{posts.slug}" %>
+                    </li>
+                <% end %>    
+                    
+                </ul>
+            </div>
+    </section>

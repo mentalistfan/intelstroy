@@ -1,0 +1,45 @@
+<%= form_for(@main, multipart: true) do |f| %>
+  <% if @main.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@main.errors.count, "error") %> prohibited this main from being saved:</h2>
+
+      <ul>
+      <% @main.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :slug %><br>
+    <%= f.text_field :slug %>
+  </div>
+  <div class="field">
+    <%= f.label :menupunkt %><br>
+    <%= f.text_field :menupunkt %>
+  </div>
+  <div class="field">
+    <%= f.label :imageattachment %><br>
+    <%= f.file_field :imageattachment %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :keywords %><br>
+    <%= f.text_field :keywords %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
