@@ -1,0 +1,45 @@
+<%= form_for(@companycontact, multipart: true) do |f| %>
+  <% if @companycontact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@companycontact.errors.count, "error") %> prohibited this companycontact from being saved:</h2>
+
+      <ul>
+      <% @companycontact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :slug %><br>
+    <%= f.text_field :slug, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :punktmenu %><br>
+    <%= f.text_field :punktmenu, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :keywords %><br>
+    <%= f.text_field :keywords, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <div class="actions" style="margin: 25px 0;">
+    <%= f.submit 'Сохранить', :class => "btn btn-lg btn-primary" %>
+  </div>
+<% end %>

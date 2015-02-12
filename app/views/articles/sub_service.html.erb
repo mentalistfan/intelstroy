@@ -1,0 +1,35 @@
+<%= title @sub.title %>
+<% description @sub.description %>
+<% keywords @sub.keywords %>
+
+<a href="/" id="sitelogo"></a>
+    <a href="/" id="mobilelogo" style="display:none;"></a>
+    <section id="news" class="wrapper group center">
+    	<h1><%= @sub.title %></h1>
+            <nav>
+                <ul class="group">
+                    <% for sub in @subcategories %>    
+                    <% if sub.id == @sub.id %>
+                        <li><%= link_to sub.title, "/services/#{sub.id}-#{sub.slug}", class: "active" %></li>      
+                    <% else %>    
+                        <li><%= link_to sub.title, "/services/#{sub.id}-#{sub.slug}" %></li>  
+                    <% end %>    
+                    <% end %>  
+                </ul>
+            </nav>
+        	<div class="inside scrollpane">
+            <% for post in @sub_posts %>
+            	<article class="group">
+                	<div class="thumb">
+					<%= link_to image_tag(post.image, class: "img-resp"), "/services/service/#{post.id}-#{post.slug}" %>
+                	</div>
+                    <div class="content">
+                    	<time><%= post.created_at.strftime("%Y/%M/%d") %></time>
+                        	<p class="title"><%= link_to post.title, "/services/service/#{post.id}-#{post.slug}" %></p>
+                            	<%= truncate(post.body.html_safe, length:250) %>
+                    </div>
+                </article>
+            <% end %>    
+                
+            </div>
+    </section>

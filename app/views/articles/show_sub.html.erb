@@ -1,0 +1,37 @@
+<%= title @thissub.title %>
+<% description @thissub.description %>
+<% keywords @thissub.keywords %>
+
+<a href="/" id="sitelogo"></a>
+    <a href="/" id="mobilelogo" style="display:none;"></a>
+    <section id="projects" class="wrapper group center">
+        <h1><%= @thissub.title %></h1>
+            <nav>
+                <ul class="group">
+            <% for sub in @subcategories %>    
+            <% if sub.id == @thissub.id %>    
+                <li><%= link_to sub.title, "/projects/#{sub.id}-#{sub.slug}", class: "active" %></li>
+            <% else %>
+                <li><%= link_to sub.title, "/projects/#{sub.id}-#{sub.slug}" %></li>
+            <% end %>    
+            <% end %>      
+                </ul>
+            </nav>
+            <div class="inside scrollpane">
+                <ul class="group unstyle" id="project_list">
+                <% for posts in @subposts %>  
+                    <li>
+                        <div class="thumb"><%= image_tag posts.image, class: "img-resp transition" %></div>
+                            <div class="link transition">
+                                <div class="content">
+                                    <p class="title"><%= posts.title %></p>
+                                    <p class="address"><%= posts.address %></p>
+                                </div>
+                            </div>
+                                <%= link_to "", "/projects/project/#{posts.id}-#{posts.slug}" %>
+                    </li>
+                <% end %>    
+                    
+                </ul>
+            </div>
+    </section>

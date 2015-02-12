@@ -1,0 +1,23 @@
+<div class="row">   
+                    <div class="col-lg-12">
+                    
+<h1 class="page-header">Изменить <%= @companycontact.title %></h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> <%= link_to "Админка", admin_path %>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> <%= link_to "Контакты", companycontacts_path %>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> <%= @companycontact.title %>
+                            </li>
+                        </ol>
+<div class="row">
+<div class="col-lg-12">
+
+<%= render 'form' %>
+
+<%= link_to 'Просмотр', @companycontact %> |
+<%= link_to 'Назад', companycontacts_path %>
+</div></div></div></div>

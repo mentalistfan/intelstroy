@@ -1,0 +1,34 @@
+<%= title @one.title %>
+<% description @one.description %>
+<% keywords @one.keywords %>
+
+<a href="/" id="sitelogo"></a>
+    <a href="/" id="mobilelogo" style="display:none;"></a>
+    <section id="projects" class="wrapper group center">
+    	<h1><%= @one.title %></h1>
+        	<nav>
+            	<ul class="group">
+            <% for sub in @subcategories %>    
+            <% if sub.id == @one.id %>    
+                <li><%= link_to sub.title, "/services/#{sub.id}-#{sub.slug}", class: "active" %></li>
+            <% else %>
+                <li><%= link_to sub.title, "/services/#{sub.id}-#{sub.slug}" %></li>
+            <% end %>    
+            <% end %>  
+                </ul>
+            </nav>
+            <div class="inside scrollpane">
+            	<div class="one">
+                	<div class="thumbnail"><%= image_tag @one.image, class: "img-resp" %></div>
+                    	<div class="text">
+                        <%= @one.body.html_safe %>
+                        <form id="ajax_form">
+                        	<input type="text" name="name" placeholder="Имя">
+                            <input type="tel" name="tel" placeholder="Телефон">
+                            <textarea placeholder="Сообщение" name="text"></textarea>
+                            <button type="submit" class="gradient">Отправить</button>
+                        </form>
+                        </div>
+                </div>
+            </div>
+    </section>
