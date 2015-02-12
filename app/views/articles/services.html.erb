@@ -1,2 +1,31 @@
-<h1>Articles#services</h1>
-<p>Find me in app/views/articles/services.html.erb</p>
+<%= title @services.title %>
+<% description @services.description %>
+<% keywords @services.keywords %>
+
+<a href="/" id="sitelogo"></a>
+    <a href="/" id="mobilelogo" style="display:none;"></a>
+    <section id="news" class="wrapper group center">
+    	<h1><%= @services.title %></h1>
+            <nav>
+                <ul class="group">
+                    <% for sub in @subcategories %>    
+                        <li><%= link_to sub.title, "/services/#{sub.id}-#{sub.slug}" %></li>  
+                    <% end %>  
+                </ul>
+            </nav>
+        	<div class="inside scrollpane">
+            <% for post in @services_posts %>
+            	<article class="group">
+                	<div class="thumb">
+					<%= link_to image_tag(post.image, class: "img-resp"), "/services/service/#{post.id}-#{post.slug}" %>
+                	</div>
+                    <div class="content">
+                    	<time><%= post.created_at.strftime("%Y/%M/%d") %></time>
+                        	<p class="title"><%= link_to post.title, "/services/service/#{post.id}-#{post.slug}" %></p>
+                            	<%= truncate(post.body.html_safe, length:250) %>
+                    </div>
+                </article>
+            <% end %>    
+                
+            </div>
+    </section>

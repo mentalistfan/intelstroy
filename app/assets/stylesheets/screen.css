@@ -285,7 +285,29 @@ footer #design:hover{
 	color:#FF3333;
 	font:36px 'Open Sans Condensed', sans-serif;
 	text-transform:uppercase;
-	margin-bottom:30px;	
+	margin-bottom:3px;	
+}
+#news nav{
+	padding-right:50px;
+	margin-bottom:27px;
+}
+#news nav ul{
+	border-bottom:1px solid #888686;
+}
+#news nav ul li{
+	float:left;
+	margin-left:40px;
+	padding-bottom:4px;
+}
+#news nav ul li:first-child{
+	margin-left:0px;
+}
+#news nav ul li a{
+	color:#CCCCCC;
+	font:17px 'Open Sans Condensed', sans-serif;	
+}
+#news nav ul li a.active{
+	color:#ffffff;	
 }
 #news article{
 	margin-bottom:30px;
@@ -396,7 +418,7 @@ footer #design:hover{
 	color:#CCCCCC;
 	font:17px 'Open Sans Condensed', sans-serif;	
 }
-#projects nav ul li.active a{
+#projects nav ul li a.active{
 	color:#ffffff;	
 }
 #projects #project_list{
@@ -576,3 +598,6 @@ background: -ms-linear-gradient(top, #bc2128 0%,#ea1d25 99%); /* IE10+ */
 background: linear-gradient(to bottom, #bc2128 0%,#ea1d25 99%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bc2128', endColorstr='#ea1d25',GradientType=0 ); /* IE6-8 */
 }	
+label.error{
+	display:none !important;
+}

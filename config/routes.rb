@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
+
+  get 'admin' => 'admin#index'
+
+  get 'admin/users'
+
+  devise_for :users
+  #devise_for :users, controllers: {
+  #  sessions: 'sessions'
+  #}
+
+  resources :users, controller: 'sessions'
   
+
+  post 'send' => 'send#index'
+
+  resources :companycontacts
+
   get 'news' => 'articles#news'
   get 'news/:id-:slug' => 'articles#show_news'
 
@@ -8,6 +24,10 @@ Rails.application.routes.draw do
   get 'projects/:id-:slug' => 'articles#show_sub'
 
   get 'services' => 'articles#services'
+  get 'services/:id-:slug' => 'articles#sub_service'
+  get 'services/service/:id-:slug' => 'articles#show_service'
+
+  get 'contacts' => 'about#contacts'
 
   resources :posts
 
@@ -19,7 +39,10 @@ Rails.application.routes.draw do
 
   get 'index/index'
 
+
   resources :mains
+
+  #match '/feedback', to: 'back#send', via: 'post'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

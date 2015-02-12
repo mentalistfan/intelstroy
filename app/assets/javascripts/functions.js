@@ -1,5 +1,5 @@
 // JavaScript Document
-$(document).ready(function(){
+$(document).on('page:change', function(){
 	$('#maincontent a.choose').click(function(e){
 		e.preventDefault();
 		

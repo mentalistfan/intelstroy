@@ -13,23 +13,23 @@
 
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :slug %><br>
-    <%= f.text_field :slug %>
+    <%= f.text_field :slug, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :keywords %><br>
-    <%= f.text_field :keywords %>
+    <%= f.text_field :keywords, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :punktmenu %><br>
-    <%= f.text_field :punktmenu %>
+    <%= f.text_field :punktmenu, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :image %><br>
@@ -37,13 +37,13 @@
   </div>
   <div class="field">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :parent %><br>
-    <%= collection_select(:category, :parent_id, Category.all, :id, :title, {:prompt => true}) %>
+    <%= collection_select(:category, :parent_id, Category.all, :id, :title, {:prompt => true}, class: "form-control") %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions" style="margin: 25px 0;">
+    <%= f.submit 'Сохранить', :class => "btn btn-lg btn-primary" %>
   </div>
 <% end %>

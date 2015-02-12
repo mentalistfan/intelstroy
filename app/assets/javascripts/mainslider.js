@@ -1,5 +1,6 @@
 // JavaScript Document
 $(document).on('page:change',function(){
+
 	var _sliderHeight = $(window).height() - $('header').height();
 	$('#mainslider').height(_sliderHeight);
 	
@@ -25,7 +26,6 @@ $(document).on('page:change',function(){
 			$('div.pager',_container).append('<a href="'+i+'"></a>');	
 		}
 	}
-	
 	function slide(){
 		var _nextSlide = parseInt(_container.attr('data-slide')) + 1;
 		if(_nextSlide >= _slidesCount){
@@ -42,7 +42,9 @@ $(document).on('page:change',function(){
 		$('div.pager a[href="'+_nextSlide+'"]').addClass('active');
 	}
 	
-	$('div.pager a').live('click',function(e){
+	setInterval(slide, _pause);
+
+	$('#mainslider div.pager a').live('click',function(e){
 		e.preventDefault();
 		var _slide = parseInt($(this).attr('href'));
 		
@@ -57,6 +59,4 @@ $(document).on('page:change',function(){
 		$(this).addClass('active');
 		
 	});
-	
-	setInterval(slide, _pause);
 })

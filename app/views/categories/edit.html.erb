@@ -1,6 +1,23 @@
-<h1>Editing category</h1>
+<div class="row">   
+                    <div class="col-lg-12">
+                    
+<h1 class="page-header">Изменить категорию <%= @category.title %></h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> <%= link_to "Админка", admin_path %>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> <%= link_to "Категории", categories_path %>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> <%= @category.title %>
+                            </li>
+                        </ol>
+<div class="row">
+<div class="col-lg-12">
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>
+<%= link_to 'Просмотр', @category %> |
+<%= link_to 'Назад', categories_path %>
+</div></div></div></div>

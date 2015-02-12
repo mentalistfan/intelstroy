@@ -1,6 +1,7 @@
 class MainsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_main, only: [:show, :edit, :update, :destroy]
-
+  layout 'admin'
   # GET /mains
   # GET /mains.json
   def index

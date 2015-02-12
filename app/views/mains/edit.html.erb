@@ -1,6 +1,20 @@
-<h1>Editing main</h1>
+<div class="row">   
+                    <div class="col-lg-12">
+                    
+<h1 class="page-header">Изменить <%= @main.title %></h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> <%= link_to "Админка", admin_path %>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> <%= @main.title %>
+                            </li>
+                        </ol>
+<div class="row">
+<div class="col-lg-12">
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @main %> |
-<%= link_to 'Back', mains_path %>
+<%= link_to 'Просмотр', @main %> |
+<%= link_to 'Назад', mains_path %>
+</div></div></div></div>

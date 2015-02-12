@@ -1,13 +1,15 @@
 <%= title @page_title %>
-<%= @subs %>
-<a href="#" id="sitelogo"></a>
-    <a href="#" id="mobilelogo" style="display:none;"></a>
+<% description @projects_cat.description %>
+<% keywords @projects_cat.keywords %>
+
+<a href="/" id="sitelogo"></a>
+    <a href="/" id="mobilelogo" style="display:none;"></a>
     <section id="projects" class="wrapper group center">
     	<h1><%= @page_title %></h1>
         	<nav>
             	<ul class="group">
             <% for sub in @subcategories %>    
-                <li><a href="<%= sub.id %>"><%= sub.title %></a></li>
+                <li><%= link_to sub.title, "/projects/#{sub.id}-#{sub.slug}" %></li>
             <% end %>    	
                 </ul>
             </nav>

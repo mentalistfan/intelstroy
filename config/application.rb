@@ -21,6 +21,14 @@ module Intelstroy
 	config.action_controller.asset_host = "localhost:3000"
 	Paperclip::Railtie.insert
 	config.i18n.default_locale = :ru
-	
+	config.to_prepare do
+        Devise::SessionsController.layout "admin"
+        Devise::RegistrationsController.layout "admin"
+        Devise::ConfirmationsController.layout "admin"
+        Devise::UnlocksController.layout "admin"
+        Devise::PasswordsController.layout "admin"
+    end
+    
   end
+
 end

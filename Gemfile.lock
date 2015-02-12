@@ -38,6 +38,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.10-x86-mingw32)
     builder (3.2.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -50,8 +51,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.0)
+    devise (3.4.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     erubis (2.7.0)
-    execjs (2.2.2)
+    execjs (2.3.0)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (2.2.6)
@@ -67,6 +75,7 @@ GEM
     mini_magick (4.0.3)
     minitest (5.5.1)
     multi_json (1.10.1)
+    orm_adapter (0.5.0)
     rack (1.5.2)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -88,6 +97,8 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    responders (1.1.2)
+      railties (>= 3.2, < 4.2)
     russian (0.6.0)
       i18n (>= 0.5.0)
     sass (3.2.19)
@@ -116,17 +127,20 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2014.10)
+    tzinfo-data (1.2015.1)
       tzinfo (>= 1.0.0)
     uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  devise
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick

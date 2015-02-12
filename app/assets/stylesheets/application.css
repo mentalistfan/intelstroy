@@ -16,5 +16,4 @@
  *= require jquery.jscrollpane
  *= require media-queries
  *= require_self
- *= require_tree .
  */

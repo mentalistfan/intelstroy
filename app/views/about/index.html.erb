@@ -1,16 +1,12 @@
 <% title @about.title %>
+<% description @about.description %>
+<% keywords @about.keywords %>
 
-<a href="#" id="sitelogo"></a>
-    <a href="#" id="mobilelogo" style="display:none;"></a>
+<a href="/" id="sitelogo"></a>
+    <a href="/" id="mobilelogo" style="display:none;"></a>
     <section id="about" class="wrapper group center">
     	<h1><%= @about.title %></h1>
         	<div class="inside scrollpane">
             	<%= @about.body.html_safe %>
-                <form>
-                        	<input type="text" name="name" placeholder="Имя">
-                            <input type="tel" name="tel" placeholder="Телефон" class="error">
-                            <textarea placeholder="Сообщение" name="text" class="error"></textarea>
-                            <button type="submit" class="gradient">Отправить</button>
-                        </form>
             </div>
     </section>

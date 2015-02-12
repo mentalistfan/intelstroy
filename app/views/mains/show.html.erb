@@ -1,7 +1,21 @@
+<div class="row">   
+                    <div class="col-lg-12">
+                    
+<h1 class="page-header"><%= @main.title %></h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> <%= link_to "Админка", admin_path %>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> <%= @main.title %>
+                            </li>
+                        </ol>
+<div class="row">
+<div class="col-lg-12">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Название:</strong>
   <%= @main.title %>
 </p>
 
@@ -11,29 +25,30 @@
 </p>
 
 <p>
-  <strong>Menupunkt:</strong>
+  <strong>Пункт меню:</strong>
   <%= @main.menupunkt %>
 </p>
 
 <p>
-  <strong>Imageattachment:</strong>
+  <strong>Картинка:</strong>
   <%= @main.imageattachment %>
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>Контент:</strong>
   <%= @main.body %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>meta Description:</strong>
   <%= @main.description %>
 </p>
 
 <p>
-  <strong>Keywords:</strong>
+  <strong>meta Keywords:</strong>
   <%= @main.keywords %>
 </p>
 
-<%= link_to 'Edit', edit_main_path(@main) %> |
-<%= link_to 'Back', mains_path %>
+<%= link_to 'Изменить', edit_main_path(@main) %> |
+<%= link_to 'Назад', mains_path %>
+</div></div></div></div>

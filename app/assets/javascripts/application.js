@@ -11,16 +11,20 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-migrate-1.2.1.min
 //= require jquery_ujs
 //= require turbolinks
 //= require html5shiv.min
 //= require placeholders.min
-//= require style
 //= require modernizr-latest
 //= require device.min
 //= require jquery.easing.1.3
 //= require jquery.mousewheel
 //= require jquery.jscrollpane.min
+//= require jquery.validate.min
+//= require jquery.maskedinput.min
 //= require functions
+//= require style
 //= require window
 //= require about
+//= require mainslider

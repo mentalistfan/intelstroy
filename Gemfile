@@ -19,6 +19,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
 gem 'russian', '~> 0.6.0'
 gem 'mini_magick'
+gem 'devise'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

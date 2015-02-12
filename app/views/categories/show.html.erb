@@ -1,7 +1,24 @@
+<div class="row">   
+                    <div class="col-lg-12">
+                    
+<h1 class="page-header"><%= @category.title %></h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> <%= link_to "Админка", admin_path %>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> <%= link_to "Категории", categories_path %>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> <%= @category.title %>
+                            </li>
+                        </ol>
+<div class="row">
+<div class="col-lg-12">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Название:</strong>
   <%= @category.title %>
 </p>
 
@@ -11,29 +28,30 @@
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>meta Description:</strong>
   <%= @category.description %>
 </p>
 
 <p>
-  <strong>Keywords:</strong>
+  <strong>meta Keywords:</strong>
   <%= @category.keywords %>
 </p>
 
 <p>
-  <strong>Punktmenu:</strong>
+  <strong>Пункт меню:</strong>
   <%= @category.punktmenu %>
 </p>
 
 <p>
-  <strong>Image:</strong>
+  <strong>Картинка:</strong>
   <%= @category.image %>
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>Контент:</strong>
   <%= @category.body %>
 </p>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= link_to 'Изменить', edit_category_path(@category) %> |
+<%= link_to 'Назад', categories_path %>
+</div></div></div></div>

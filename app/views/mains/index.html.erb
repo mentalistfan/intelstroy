@@ -1,6 +1,20 @@
-<h1>Listing mains</h1>
+<div class="row">   
+                    <div class="col-lg-12">
+                    
+<h1 class="page-header">Информация на главной странице</h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> <%= link_to "Админка", admin_path %>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> На главной
+                            </li>
+                        </ol>
+<div class="row">
+                    <div class="col-lg-12">
+<div class="table-responsive">     
 
-<table>
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
       <th>Название</th>
@@ -26,14 +40,15 @@
         <td><%= main.body %></td>
         <td><%= main.description %></td>
         <td><%= main.keywords %></td>
-        <td><%= link_to 'Show', main %></td>
-        <td><%= link_to 'Edit', edit_main_path(main) %></td>
-        <td><%= link_to 'Destroy', main, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Просмотр', main %></td>
+        <td><%= link_to 'Изменить', edit_main_path(main) %></td>
+        <td><%= link_to 'Удалить', main, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div></div></div>
 <br>
 
-<%= link_to 'New Main', new_main_path %>
+<%= link_to 'Новая информация на главной', new_main_path %>
+</div></div>

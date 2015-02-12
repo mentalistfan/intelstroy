@@ -1,4 +1,7 @@
 <% title @post.title %>
+<% description @post.description %>
+<% keywords @post.keywords %>
+
 <style>
 	body{
 		background:#ffffff;	
@@ -10,20 +13,20 @@
 		z-index:10;	
 	}
 </style>
+
 <script type="text/javascript">
 	var _slides = ['/images/slide1.jpg', '/images/slide2.jpg'];
 </script>    
     <div id="mainslider"></div>
-    <a href="#" id="sitelogo"></a>
-    <a href="#" id="mobilelogo" style="display:none;"></a>
+    <a href="/" id="sitelogo"></a>
+    <a href="/" id="mobilelogo" style="display:none;"></a>
     <div id="maincontent" class="show">
     	<a href="#" class="choose"></a>
         	<div class="text group transition">
             	<div class="content">
                     <p class="title"><%= @post.title %></p>
                         <%= @post.body.html_safe %>
-                            <a href="#" class="more">Подробнее</a>
+                            <%= link_to "Подробнее", services_path, class: "more" %>
                 </div>        
             </div>
     </div>
-<script type="text/javascript" src="/assets/mainslider.js?body=1"></script>

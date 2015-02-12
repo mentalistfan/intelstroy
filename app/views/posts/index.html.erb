@@ -1,15 +1,29 @@
-<h1>Listing posts</h1>
+<div class="row">   
+                    <div class="col-lg-12">
+                    
+<h1 class="page-header">Список записей</h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> <%= link_to "Админка", admin_path %>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> Записи
+                            </li>
+                        </ol>
+<div class="row">
+                    <div class="col-lg-12">
+<div class="table-responsive">   
 
-<table>
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th>Title</th>
+      <th>Название</th>
       <th>Slug</th>
-      <th>Description</th>
-      <th>Keywords</th>
-      <th>Punktmenu</th>
-      <th>Image</th>
-      <th>Body</th>
+      <th>meta Description</th>
+      <th>meta Keywords</th>
+      <th>Пункт меню</th>
+      <th>Картинка</th>
+      <th>Контент</th>
 	    <th>Рубрика</th>
       <th>Адрес</th>
       <th colspan="3"></th>
@@ -24,13 +38,13 @@
         <td><%= post.description %></td>
         <td><%= post.keywords %></td>
         <td><%= post.punktmenu %></td>
-        <td><%= post.image %></td>
+        <td><%= image_tag post.image %></td>
         <td><%= post.body %></td>
-		    <td><%= post.network_id %></td>
+		    <td><%= item_parent(post.network_id) %></td>
         <td><%= post.address %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Просмотр', post %></td>
+        <td><%= link_to 'Изменить', edit_post_path(post) %></td>
+        <td><%= link_to 'Удалить', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +52,5 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'Новая запись', new_post_path %>
+</div></div></div></div>

@@ -4,12 +4,16 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="<%= yield(:description) %>">
+<meta name="keywords" content="<%= yield(:keywords) %>">
   <title><%= yield(:title) %> | Интелстрой</title>
   <!--[if lt IE 9]>
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
   <![endif]-->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -20,16 +24,15 @@
         	<%= link_to "", root_path, id: "logo"%>
             	<nav>
                 	<ul class="group">
-                    	<li><%= link_to "О компании", about_path %></li>
-                        <li><%= link_to "Новости", news_path %></li>
-                        <li><%= link_to "Проекты", projects_path %></li>
-                        <li><a href="#">Услуги</a>
+                    	<li><%= link_to about_menu_punkt, about_path %></li>
+                        <li><%= link_to news_menu_punkt, news_path %></li>
+                        <li><%= link_to projects_menu_punkt, projects_path %></li>
+                        <li><%= link_to servs_menu_punkt, services_path %>
                         	<ul>
-                            	<li><a href="#">Подменю 1</a></li>
-                                <li><a href="#">Подменю 2</a></li>
+                            	<%= create_servs_menu %>
                             </ul>
                         </li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><%= link_to "Контакты", contacts_path %></li>
                     </ul>
                 </nav>
                 <div class="icons">
@@ -38,7 +41,7 @@
                     <a href="#"><%= image_tag(asset_host("soc3.png"), class: "img-resp") %></a>
                 </div>
          </div>       
-                	<a href="#" class="change_lang transition">en</a>
+                	<!--<a href="#" class="change_lang transition">en</a>-->
                     <p class="tel"><span>+7 926</span> 800 88 88</p>
                     	<ul class="unstyle group social">
                         	<li><a href="#"><%= image_tag(asset_host("soc1.png"), class: "img-resp") %></a></li>

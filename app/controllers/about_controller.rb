@@ -1,5 +1,9 @@
 class AboutController < ApplicationController
   def index
-	@about = Company.find(1)
+	@about = Company.all.first
+  end
+
+  def contacts
+  	@contacts = Companycontact.all.first
   end
 end

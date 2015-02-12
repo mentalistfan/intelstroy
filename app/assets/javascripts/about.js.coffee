@@ -23,4 +23,6 @@ $(document).on "page:change", ->
 	_half = -(_cont/2)
 	$('#maincontent').css({'margin-top' : _half})
 
+	$("[name=tel]").mask("+7(999) 999-99-99")
+
 	
