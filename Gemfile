@@ -20,7 +20,7 @@ gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
 gem 'russian', '~> 0.6.0'
 gem 'mini_magick'
 gem 'devise'
-
+gem 'capistrano'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -31,8 +31,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :production do
-  gem 'pg', '0.15.1'
-  gem 'rails_12factor', '0.0.2'
+  gem 'mysql2'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

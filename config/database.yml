@@ -21,11 +21,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  host:    ec2-54-197-238-8.compute-1.amazonaws.com
-  username: tltuetdvbzdjag
-  database: dbckn8o66r6lmo
-  password: XFyFilcp4pZXr9AzL1Xzp7amFj
-
-
-  
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: skvz_intelstro85
+  pool: 5
+  username: skvz_intelstro85
+  password: erq138DftyN
+  host: mysql4.locum.ru
